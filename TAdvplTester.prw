@@ -19,7 +19,7 @@ nTime := Seconds()
 ConOut( "Begin: " + DtoC( Date() ) + Space( 1 ) + Time() )
 
 //Instancia a classe e começa os testes
-oRunAdvpl := TAdvplTester():New( 5000 , .F. )
+oRunAdvpl := TAdvplTester():New( 2500 , .F. )
 oRunAdvpl:RunAll()
 
 //Printa no console o final dos testes
@@ -153,6 +153,7 @@ Method TRight()
 Method TSpace()
 Method TStrTokArr()
 Method TStrTokArr2()
+Method TStrTran()
 Method TSubStr()
 Method TTransform()
 Method TTrim()
@@ -405,6 +406,7 @@ Self:TRight()
 Self:TSpace()
 Self:TStrTokArr()
 Self:TStrTokArr2()
+Self:TStrTran()
 Self:TSubStr()
 Self:TTransform()
 Self:TTrim()
@@ -2764,6 +2766,45 @@ EndDo
 
 Self:UpdateTime( 'While' , 'End' )
 Self:CleanArray( aArry )
+
+Return Nil
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} TStrTran
+@author Daniel Mendes de Melo Sousa
+@since  26/06/2017
+/*/
+//-------------------------------------------------------------------
+Method TStrTran() Class TAdvplTester
+Local nLoop := 0
+Local nBegn := 0
+Local nSize := 0
+Local cText := ''
+Local cStrT := ''
+
+cText := ' Tester '
+nBegn := 0
+nSize := 0
+
+Self:SetFunctionName( 'StrTran' )
+Self:UpdateTime( 'For' , 'Begin' )
+
+For nLoop := 1 To Self:nHowManyTimes
+    cStrT := StrTran( cText , ' ' , '_' )
+Next
+
+Self:UpdateTime( 'For' , 'End' )
+
+nLoop := 1
+
+Self:UpdateTime( 'While' , 'Begin' )
+
+While nLoop <= Self:nHowManyTimes
+    cStrT := StrTran( cText , ' ' , '_' )
+    nLoop++
+EndDo
+
+Self:UpdateTime( 'While' , 'End' )
 
 Return Nil
 
