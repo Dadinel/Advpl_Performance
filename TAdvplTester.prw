@@ -3714,12 +3714,12 @@ Return Nil
 //--------------------------------------------------Classe--------------------------------------------------//
 
 //-------------------------------------------------------------------
-/*/{Protheus.doc} TFnc
+/*/{Protheus.doc} xFnc
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
 //-------------------------------------------------------------------
-Static Function TFnc( xParam )
+Static Function xFnc( xParam )
 Local xVariable := Nil
 Return Nil
 
