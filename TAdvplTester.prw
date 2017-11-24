@@ -2,7 +2,7 @@
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} CallAdvplTester
-Executa fun√ß√µes atrav√©s da classe TAdvplTester para medir tempos
+Executa funÁıes atravÈs da classe TAdvplTester para medir tempos
 	
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
@@ -15,10 +15,10 @@ Local nTime   := 0
 //Pega os segundos iniciais
 nTime := Seconds()
 
-//Printa no console o in√≠cio dos testes
+//Printa no console o inÌcio dos testes
 ConOut( "Begin: " + DtoC( Date() ) + Space( 1 ) + Time() )
 
-//Instancia a classe e come√ßa os testes
+//Instancia a classe e comeÁa os testes
 oRunAdvpl := TAdvplTester():New( 2500 , .F. )
 oRunAdvpl:RunAll()
 
@@ -40,19 +40,19 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} TAdvplTester
-Classe de teste de fun√ß√µes do bin√°rio,
-guardando os tempos de execu√ß√£o
+Classe de teste de funÁıes do bin·rio,
+guardando os tempos de execuÁ„o
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
 //-------------------------------------------------------------------
 Class TAdvplTester From LongNameClass
-Data aTimes        As Array     //Guarda os tempos de execu√ß√£o das fun√ß√µes
-Data nHowManyTimes As Numeric   //Guarda quantos testes ser√£o executados
-Data cFunctionName As Character //Guarda o nome da fun√ß√£o que est√° sendo testada
-Data lDoWhileTest  As Logical   //Guarda a informa√ß√£o se o teste deve ser efetuada com while tamb√©m
+Data aTimes        As Array     //Guarda os tempos de execuÁ„o das funÁıes
+Data nHowManyTimes As Numeric   //Guarda quantos testes ser„o executados
+Data cFunctionName As Character //Guarda o nome da funÁ„o que est· sendo testada
+Data lDoWhileTest  As Logical   //Guarda a informaÁ„o se o teste deve ser efetuada com while tambÈm
 
-//M√©todos base da classe
+//MÈtodos base da classe
 Method New() //Constructor
 Method Destroy() //Destructor
 Method CleanArray()
@@ -62,7 +62,7 @@ Method SetFunctionName()
 Method GetFunctionName()
 Method ExportResults()
 
-//M√©todos que execut√£o os testes em blocos
+//MÈtodos que execut„o os testes em blocos
 Method RunAll()
 Method RunArray()
 Method RunDate()
@@ -75,9 +75,9 @@ Method RunProcessing()
 Method RunRPO()
 Method RunOthers()
 
-//M√©todos de teste da classe
+//MÈtodos de teste da classe
 
-//M√©todos...
+//MÈtodos...
 Method TStaticCall()
 Method TMacro()
 Method TType()
@@ -88,8 +88,9 @@ Method TIfString()
 Method TIfNumber()
 Method TIfDate()
 Method TifBoolean()
+Method TClassTest()
 
-//M√©todos de RPO
+//MÈtodos de RPO
 Method TChkRpoChg()
 Method TGetApoInfo()
 Method TGetApoRes()
@@ -97,7 +98,7 @@ Method TGetFuncArray()
 Method TGetRpoLog()
 Method TGetSrcArray()
 
-//M√©todos de processamento
+//MÈtodos de processamento
 Method TConOut()
 Method TFindFunction()
 Method TProcLine()
@@ -105,12 +106,12 @@ Method TProcName()
 Method TSysRefresh()
 Method TQOut()
 
-//M√©todos de bloco de c√≥digo
+//MÈtodos de bloco de cÛdigo
 Method TAEval()
 Method TEval()
 Method TGetCBSource()
 
-//M√©todos de array
+//MÈtodos de array
 Method TArray()
 Method TAadd()
 Method TAClone()
@@ -126,7 +127,7 @@ Method TATail()
 Method TEmptyArray()
 Method TLenArray()
 
-//M√©todos de data
+//MÈtodos de data
 Method TCDow()
 Method TCMonth()
 Method TDate()
@@ -137,7 +138,7 @@ Method TSeconds()
 Method TTime()
 Method TYear()
 
-//M√©todos de string
+//MÈtodos de string
 Method TAllTrim()
 Method TAsc()
 Method TAt()
@@ -160,7 +161,7 @@ Method TTrim()
 Method TUpper()
 Method TConcat()
 
-//M√©todos de number
+//MÈtodos de number
 Method TAbs()
 Method TInt()
 Method TMax()
@@ -169,7 +170,7 @@ Method TNoRound()
 Method TRandomize()
 Method TRound()
 
-//M√©todos matem√°ticos
+//MÈtodos matem·ticos
 Method TCeiling()
 Method TExp()
 Method TLog()
@@ -177,7 +178,7 @@ Method TLog10()
 Method TMod()
 Method TSqrt()
 
-//M√©todos de convers√£o
+//MÈtodos de convers„o
 Method TCValToChar()
 Method TDtoC()
 Method TDtoS()
@@ -191,7 +192,7 @@ EndClass
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} New
-M√©todo construtor da classe
+MÈtodo construtor da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -214,7 +215,7 @@ Return Self
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} Destroy
-M√©todo de destrui√ß√£o da classe
+MÈtodo de destruiÁ„o da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -232,7 +233,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} CleanArray
-M√©todo de limpeza de arrays
+MÈtodo de limpeza de arrays
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -244,7 +245,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} UpdateTime
-M√©todo de adi√ß√£o dos tempos de execu√ß√£o
+MÈtodo de adiÁ„o dos tempos de execuÁ„o
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -263,7 +264,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} GetTimes
-M√©todo que retorna o array de tempos
+MÈtodo que retorna o array de tempos
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -273,7 +274,7 @@ Return Self:aTimes
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} GetTimes
-M√©todo que seta o nome da fun√ß√£o
+MÈtodo que seta o nome da funÁ„o
 @author Daniel Mendes de Melo Sousa
 @since  27/06/2017
 /*/
@@ -284,7 +285,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} GetTimes
-M√©todo que retorna o nome da fun√ß√£o
+MÈtodo que retorna o nome da funÁ„o
 @author Daniel Mendes de Melo Sousa
 @since  27/06/2017
 /*/
@@ -322,7 +323,7 @@ Return lSaved
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunAll
-M√©todo que chama todos os testes presentes na classe
+MÈtodo que chama todos os testes presentes na classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -342,7 +343,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunArray
-M√©todo que chama todos os testes de array da classe
+MÈtodo que chama todos os testes de array da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -366,7 +367,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunDate
-M√©todo que chama todos os testes de data da classe
+MÈtodo que chama todos os testes de data da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -385,7 +386,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunString
-M√©todo que chama todos os testes de string da classe
+MÈtodo que chama todos os testes de string da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -416,7 +417,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunNumber
-M√©todo que chama todos os testes de number da classe
+MÈtodo que chama todos os testes de number da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -433,7 +434,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunConversion
-M√©todo que chama todos os testes de convers√£o da classe
+MÈtodo que chama todos os testes de convers„o da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -451,7 +452,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunConversion
-M√©todo que chama todos os testes matem√°ticos da classe
+MÈtodo que chama todos os testes matem·ticos da classe
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -467,7 +468,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunCodeBlock
-M√©todo que chama todos os testes de bloco de c√≥digo
+MÈtodo que chama todos os testes de bloco de cÛdigo
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -480,7 +481,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunProcessing
-M√©todo que chama todos os testes de processamento
+MÈtodo que chama todos os testes de processamento
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -496,7 +497,7 @@ Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunRPO
-M√©todo que chama todos os testes de RPO
+MÈtodo que chama todos os testes de RPO
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -506,13 +507,13 @@ Self:TChkRpoChg()
 Self:TGetApoInfo()
 Self:TGetApoRes()
 Self:TGetFuncArray()
-//Self:TGetRpoLog() --Essa fun√ß√£o n√£o est√° podendo ser chamada!
+//Self:TGetRpoLog() --Essa funÁ„o n„o est· podendo ser chamada!
 Self:TGetSrcArray()
 Return Nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} RunOthers
-M√©todo que chama todos os demais testes
+MÈtodo que chama todos os demais testes
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
@@ -528,6 +529,7 @@ Self:TIfString()
 Self:TIfNumber()
 Self:TIfDate()
 Self:TifBoolean()
+Self:TClassTest()
 Return Nil
 
 //-------------------------------------------------------------------
@@ -738,7 +740,7 @@ Local cVal1 := ''
 Local cVal2 := ''
 
 cVal1 := 'Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss | . ; : [] () {} = - + ! @ # $ % &'
-cVal2 := 'Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss | . ; : [] () {} = - + ! @ # $ % √ß'
+cVal2 := 'Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss | . ; : [] () {} = - + ! @ # $ % Á'
 
 Self:SetFunctionName( 'If - String' )
 Self:UpdateTime( 'For' , 'Begin' )
@@ -881,6 +883,42 @@ While nLoop <= Self:nHowManyTimes
 EndDo
 
 Self:UpdateTime( 'While' , 'End' )
+
+Return Nil
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} TClassTest
+@author Daniel Mendes de Melo Sousa
+@since  28/06/2017
+/*/
+//-------------------------------------------------------------------
+Method TClassTest() Class TAdvplTester
+Local nLoop  := 0
+Local oClass := Nil
+
+oClass := TTesteAdvpl():New()
+
+Self:SetFunctionName( 'Class' )
+Self:UpdateTime( 'For' , 'Begin' )
+
+For nLoop := 1 To Self:nHowManyTimes
+    oClass:Teste()
+Next
+
+Self:UpdateTime( 'For' , 'End' )
+
+nLoop := 1
+
+Self:UpdateTime( 'While' , 'Begin' )
+
+While nLoop <= Self:nHowManyTimes
+    oClass:Teste()
+    nLoop++
+EndDo
+
+Self:UpdateTime( 'While' , 'End' )
+
+oClass := Nil
 
 Return Nil
 
@@ -3723,8 +3761,37 @@ Static Function xFnc( xParam )
 Local xVariable := Nil
 Return Nil
 
+//-------------------------------------------------------------------
+/*/{Protheus.doc} TTesteAdvpl
+@author Daniel Mendes de Melo Sousa
+@since  26/06/2017
+/*/
+//-------------------------------------------------------------------
+Class TTesteAdvpl From LongNameClass
+Method New()
+Method Teste()
+EndClass
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} New
+@author Daniel Mendes de Melo Sousa
+@since  26/06/2017
+/*/
+//-------------------------------------------------------------------
+Method New() Class TTesteAdvpl
+Return Self
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} Teste
+@author Daniel Mendes de Melo Sousa
+@since  26/06/2017
+/*/
+//-------------------------------------------------------------------
+Method Teste() Class TTesteAdvpl
+Return Nil
+
 /*
--- Prot√≥tipo do m√©todo
+-- ProtÛtipo do mÈtodo
 */
 //-------------------------------------------------------------------
 /*/{Protheus.doc} Funcao
