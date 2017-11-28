@@ -78,8 +78,10 @@ Method RunOthers()
 //Métodos de teste da classe
 
 //Métodos...
+Method TStaticFunction()
 Method TStaticCall()
-Method TMacro()
+Method TMacro01()
+Method TMacro02()
 Method TType()
 Method TValType()
 Method TAllwaysFalse()
@@ -519,8 +521,10 @@ Método que chama todos os demais testes
 /*/
 //-------------------------------------------------------------------
 Method RunOthers() Class TAdvplTester
+Self:TStaticFunction()
 Self:TStaticCall()
-Self:TMacro()
+Self:TMacro01()
+Self:TMacro02()
 Self:TType()
 Self:TValType()
 Self:TAllwaysFalse()
@@ -530,6 +534,37 @@ Self:TIfNumber()
 Self:TIfDate()
 Self:TifBoolean()
 Self:TClassTest()
+Return Nil
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} TStaticFunction
+@author Daniel Mendes de Melo Sousa
+@since  26/06/2017
+/*/
+//-------------------------------------------------------------------
+Method TStaticFunction() Class TAdvplTester
+Local nLoop := 0
+
+Self:SetFunctionName( 'Static Function' )
+Self:UpdateTime( 'For' , 'Begin' )
+
+For nLoop := 1 To Self:nHowManyTimes
+    xFnc()
+Next
+
+Self:UpdateTime( 'For' , 'End' )
+
+nLoop := 1
+
+Self:UpdateTime( 'While' , 'Begin' )
+
+While nLoop <= Self:nHowManyTimes
+    xFnc()
+    nLoop++
+EndDo
+
+Self:UpdateTime( 'While' , 'End' )
+
 Return Nil
 
 //-------------------------------------------------------------------
@@ -564,18 +599,18 @@ Self:UpdateTime( 'While' , 'End' )
 Return Nil
 
 //-------------------------------------------------------------------
-/*/{Protheus.doc} TMacro
+/*/{Protheus.doc} TMacro01
 @author Daniel Mendes de Melo Sousa
 @since  26/06/2017
 /*/
 //-------------------------------------------------------------------
-Method TMacro() Class TAdvplTester
+Method TMacro01() Class TAdvplTester
 Local nLoop := 0
 Local cMacr := ''
 
 cMacr := ' Iif( .T. .And. .F. , .F. , .T. ) '
 
-Self:SetFunctionName( 'Macro' )
+Self:SetFunctionName( 'Fixed Macro' )
 Self:UpdateTime( 'For' , 'Begin' )
 
 For nLoop := 1 To Self:nHowManyTimes
@@ -590,6 +625,37 @@ Self:UpdateTime( 'While' , 'Begin' )
 
 While nLoop <= Self:nHowManyTimes
     &( cMacr )
+    nLoop++
+EndDo
+
+Self:UpdateTime( 'While' , 'End' )
+
+Return Nil
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} TMacro02
+@author Daniel Mendes de Melo Sousa
+@since  26/06/2017
+/*/
+//-------------------------------------------------------------------
+Method TMacro02() Class TAdvplTester
+Local nLoop := 0
+
+Self:SetFunctionName( 'Macro' )
+Self:UpdateTime( 'For' , 'Begin' )
+
+For nLoop := 1 To Self:nHowManyTimes
+    &( ' Iif( .T. , ' + cValToChar( nLoop ) + ' , 0 ) ' )
+Next
+
+Self:UpdateTime( 'For' , 'End' )
+
+nLoop := 1
+
+Self:UpdateTime( 'While' , 'Begin' )
+
+While nLoop <= Self:nHowManyTimes
+    &( ' Iif( .T. , ' + cValToChar( nLoop ) + ' , 0 ) ' )
     nLoop++
 EndDo
 
